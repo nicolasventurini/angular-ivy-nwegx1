@@ -1,0 +1,23 @@
+<div class="container">
+  <div>
+    <div class="col-md-4 mb-3" *ngFor="let pianeta of pianeti">
+      <button (click)="mostraPianeta(pianeta)">{{ pianeta.nome }}</button>
+    </div>
+  </div>
+  <div *ngIf="pianetaSelezionato">
+    <div class="info">
+      <img
+        [src]="pianetaSelezionato.immagine"
+        alt="{{ pianetaSelezionato.nome }}"
+      />
+      <p><a (click)="nascondiPianeta()">nascondi</a></p>
+    </div>
+    <div class="info">
+      <p>informazioni su {{ pianetaSelezionato.nome }}</p>
+      <p>{{ pianetaSelezionato.descrizione }}</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- NON SO COME GESTIRE LA PARTE DEL "FIGLIO", QUINDI L'HO TOLTO DIRETTAMENTE PER NON AVERE L'ERRORE -->
